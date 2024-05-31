@@ -5,6 +5,7 @@
 ## QuickStart
 
 ```bash
+wget https://github.com/senhao-xu/dp/releases/download/Latest/dp /usr/local/bin/ && chmod -R 777 /usr/local/bin/dp
 dp [registry.k8s.io/ingress-nginx/controller:v1.4.0]
 ```
 ## SupportRepo
