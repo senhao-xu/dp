@@ -22,7 +22,12 @@ func main() {
 	originalImage := os.Args[1]
 	subStr := strings.Split(originalImage, "/")[0]
 
-	newImage := strings.Replace(originalImage, subStr, repoMap[subStr], 1)
+	var newImage = ""
+	if repoMap[subStr] == "" {
+		newImage = "dockerproxy.com/" + originalImage
+	} else {
+		newImage = strings.Replace(originalImage, subStr, repoMap[subStr], 1)
+	}
 	fmt.Println(newImage)
 
 	// 拉取镜像
