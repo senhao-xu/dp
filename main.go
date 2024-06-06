@@ -24,7 +24,7 @@ func main() {
 
 	var newImage = ""
 	if repoMap[subStr] == "" {
-		newImage = "dockerproxy.com/" + originalImage
+		newImage = "docker.m.daocloud.io/" + originalImage
 	} else {
 		newImage = strings.Replace(originalImage, subStr, repoMap[subStr], 1)
 	}
@@ -55,12 +55,12 @@ func main() {
 }
 
 func init() {
-	repoMap["ghcr.io"] = "ghcr.dockerproxy.com"
-	repoMap["gcr.io"] = "gcr.dockerproxy.com"
-	repoMap["k8s.gcr.io"] = "k8s.dockerproxy.com"
-	repoMap["registry.k8s.io"] = "k8s.dockerproxy.com"
-	repoMap["quay.io"] = "quay.dockerproxy.com"
-	repoMap["mcr.microsoft.com"] = "mcr.dockerproxy.com"
+	repoMap["ghcr.io"] = "ghcr.m.daocloud.io"
+	repoMap["gcr.io"] = "gcr.m.daocloud.io"
+	repoMap["k8s.gcr.io"] = "k8s-gcr.m.daocloud.io"
+	repoMap["registry.k8s.io"] = "k8s.m.daocloud.io"
+	repoMap["quay.io"] = "quay.m.daocloud.io"
+	repoMap["mcr.microsoft.com"] = "mcr.m.daocloud.io"
 }
 
 func execCmd(name string, arg ...string) error {
